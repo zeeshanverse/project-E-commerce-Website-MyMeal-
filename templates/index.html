@@ -1,0 +1,645 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>best online fod delivery| MyOnlineMeal.com</title>
+    <link rel="stylesheet" href="main.css">
+    <!--<link rel="stylesheet"media="screen and (max-width:2560px)" href="mobile.css">-->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="img/cwh.jpg" alt="myonlinemeal.com">
+        </div>
+        <ul>
+            <li class="item"><a href="">Home</a></li>
+            <li class="item"><a href="">Services</a></li>
+            <li class="item"><a href="">Contact us</a></li>
+            <li class="item"><a href="">About us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid earum eligendi sunt quisquam, velit </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid earum eligendi </p>
+        <button id="btn1">order now</button>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary center">
+            Our Services
+        </h1>
+        <div id="services">
+            <div class="box">
+                <img src="img/img1.jpg">
+                <h2 class="h-secondary center">
+                    Food Delivery
+                </h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, culpa voluptas
+                    modi dicta dolor odit neque? Sapiente quidem enim dolores quod fugit consequatur incidunt ex,
+                    reprehenderit maxime accusantium eveniet? Sunt earum itaque aperiam numquam.</p>
+            </div>
+            <div class="box">
+                <img src="img/img2.jpg">
+                <h2 class="h-secondary center">
+                    Bulk Delivery
+                </h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, culpa voluptas
+                    modi dicta dolor odit neque? Sapiente quidem enim dolores quod fugit consequatur incidunt ex,
+                    reprehenderit maxime accusantium eveniet? Sunt earum itaque aperiam numquam.</p>
+            </div>
+            <div class="box">
+                <img src="img/img3.jpg">
+                <h2 class="h-secondary center">
+                    Food Catering
+                </h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, culpa voluptas
+                    modi dicta dolor odit neque? Sapiente quidem enim dolores quod fugit consequatur incidunt ex,
+                    reprehenderit maxime accusantium eveniet? Sunt earum itaque aperiam numquam.</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center">Our
+            Clients
+        </h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="img/logo1.jpg">
+            </div>
+            <div class="client-item">
+                <img src="img/logo1.jpg">
+            </div>
+            <div class="client-item">
+                <img src="img/logo1.jpg">
+            </div>
+            <div class="client-item">
+                <img src="img/logo1.jpg">
+            </div>
+        </div>
+        <section id="contact">
+            <h1 class="h-primary center">Contact Us</h1>
+            <div id="contact-box">
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="email" name="name" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number: </label>
+                        <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message: </label>
+                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button  id="btn2"> submit</button>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="center">
+                Copyright &copy; MyOnlineMeal.com All Rights Reserved.
+            </div>
+        </footer>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| MyMeal.com  |</title>
+    <!-- Linking CSS file in the static folder using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="{{ url_for('static', filename='css/mobile.css') }}">
+
+    <!--<link rel="stylesheet"media="screen and (max-width:2560px)" href="mobile.css">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <!-- Add Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    }
+    /*navigation bar*/
+    
+    
+    #navbar{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        position:absolute;
+        padding: 15px, 30px;
+        top:0;
+        left:0;
+        width: 100%;
+        /* background-color: #3a3a3a; */
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+    #navbar::before{
+       content:"";
+       /* background-color: */
+       position:absolute;
+       height:100%;
+       width:100%;
+       z-index:-1;
+       opacity:0.4;
+    }
+    #logo{
+        margin-left:15px;
+        margin-right:15px;
+    }
+    #logo img{
+        margin:5px 10px;
+        height:50px;
+        width:50px;
+        border-radius:30px;
+    }
+    ul{
+        display:flex;
+    }
+    ul li{
+        list-style:none;
+        font-size:1.5rem;
+    }
+    ul li a{
+    padding:2px 15px;
+    text-decoration:none;
+    border-radius:15px;
+    color:white;
+    }
+    ul li a:hover{
+    color:black;
+    background-color:white;
+    }
+    /*home section*/
+    #home{
+       display:flex; 
+       flex-direction:column;
+       padding:10px 150px;
+       justify-content:center;
+       align-items:center;
+       height:450px;
+    }
+    #home::before{
+       content:"";
+       position:absolute;
+       background: url("static/newback.jpg")
+       no-repeat center center/cover;
+       height:100%;
+       width:100%;
+       z-index:-1;
+       opacity:1;
+    
+     }
+     #home h1{
+    text-align:center;
+    color:white;
+    font-size:50px;
+     }
+     #home p{color:white;
+         font-size:20px;
+         font-family: 'Bree Serif', serif;
+    }
+    #btn1{
+        padding:4px 16px;
+        border:1px solid white;
+        color:white;
+        margin:17px;
+        border-radius:8px;
+        font-size:1.5rem;
+        background-color:rgb(146, 50, 50);
+        cursor: pointer;
+    }
+    /*services section*/
+    
+    #services{
+    margin:20px;
+    display:flex;
+    }
+    #services .box{
+        border:2px solid brown;
+        margin:10px;
+        padding:10px;
+        border-radius:10px;   
+        background-color:rgb(228, 196, 196);
+    }
+    #services .box img{
+        height:100px;
+        width:100px;
+        border-radius:50px;
+        display:block;
+        margin:auto;
+    }
+    #services p{
+        font-size:15px;
+    }
+     /*utility classes*/
+     .h-primary{font-family: 'Bree Serif', serif;
+         font-size:3rem;
+         padding:12px;
+     }
+     
+     .center{
+    text-align:center;
+     }
+     .h-secondary{
+         font-size:2rem;
+     }
+    /*client-section*/
+    #client-section{
+        position:relative;
+        height:200px;
+    }
+    #client-section::before{
+        content:"";
+        position:absolute;
+        background:url("static/newback2.jpg") no-repeat
+        center center/cover;
+        width:100%;
+        height:100%;
+        z-index:-1;
+        opacity:1;
+    }
+    #clients{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    #clients img{
+        height:60px;
+        width:60px;
+        border-radius:30px;
+    }
+    .client-item{
+        padding:15px;
+    }
+    /*contact section*/
+    #contact{
+        position:relative;
+        margin-top:15px;
+    }
+    #contact::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:0.5;
+    background:url("static/contact.jpg") no-repeat center center/cover;
+    }
+    
+    
+    #contact-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 34px;
+    }
+    #contact-box input, 
+    #contact-box textarea{
+        width: 100%;
+        padding: 8px;
+        border-radius: 9px;
+        font-size:18px;
+        border:1px solid black;
+    } 
+    
+    #contact-box form{
+        width: 40%;
+    }
+    #btn2{
+        width:100px;
+        height:40px;
+        font-size:15px;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        border-radius:10px;
+        margin-left:1px;
+        cursor: pointer;
+    }
+    
+    #contact-box label{
+        font-size: 1.5rem;
+        font-family: 'Bree Serif', serif;
+        
+    }
+    /*footer*****/
+    footer{
+        background-color:black;
+        color:white;
+        font-size:18px;
+        height:45px;
+        line-height:40px;
+    }
+    #logo img {
+            height: 100px;
+            width: 100px;
+            border-radius: 60px;
+        }
+    /* Style for the select element */
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 9px;
+    font-size: 18px;
+    border: 1px solid black;
+    margin-top: 5px; /* Add some spacing above */
+}
+
+/* Optional: Change the appearance on focus */
+select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: rgb(146, 50, 50); /* Add a border color */
+}
+    .form-group{
+        /* cursor: pointer; */
+    }
+    #customer-support {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+#support-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.support-details {
+    text-align: right;
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+}
+
+.support-details p {
+    margin: 0;
+}
+/* New styles for social icons */
+.social-icons {
+        display: flex;
+        gap: 15px; /* Space between icons */
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px; /* Icon size */
+        height: 40px; /* Icon size */
+        border-radius: 50%; /* Circular shape */
+        background-color: #ddd; /* Background color for circle */
+        color: #333; /* Icon color */
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .social-icons a:hover {
+        background-color: #bbb; /* Change color on hover */
+    }
+
+</style>
+
+<body>
+    <div id="logo">
+        <img src="static/cwh.jpg" alt="myonlinemeal.com">
+    </div>
+    <nav id="navbar">
+        
+        <ul>
+            
+            <li class="item"><a href="">Home</a></li>
+            <li class="item"><a href="">Services</a></li>
+            <li class="item"><a href="">Contact us</a></li>
+            <li class="item"><a href="">About us</a></li>
+            <!-- Added Cart and Checkout links to the navigation bar -->
+            <li class="item"><a href="/cart">Cart</a></li>
+            <li class="item"><a href="/checkout">Checkout</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyMeal</h1>
+        <p>Discover culinary delights with MyMeal</p>
+        <p>Savor the experience</p>
+        <p>Your dining adventure begins here</p>
+        <!-- Modify the Order Now button -->
+        <button id="btn1" onclick="window.location.href='/order'">Order Now</button>
+
+    </section>
+    
+    <section id="services-container">
+        <h1 class="h-primary center">
+            Our Services
+        </h1>
+        <div id="services">
+            <div class="box">
+                <img src="static/img1.jpg">
+                <h2 class="h-secondary center">
+                    Food Delivery
+                </h2>
+                <p class="center">Experience hassle-free food delivery with MyMeal! Choose from a wide selection of local restaurants and enjoy your favorite meals delivered straight to your door. Whether it's a quick lunch or a late-night craving, we've got you covered with fast and reliable service.</p>
+            </div>
+            <div class="box">
+                <img src="static/img2.jpg">
+                <h2 class="h-secondary center">
+                    Bulk Delivery
+                </h2>
+                <p class="center">Need to feed a crowd? MyMeal’s bulk delivery service is perfect for gatherings, events, or office meetings. Select from our extensive menu and place large orders with ease, ensuring everyone enjoys delicious meals without the stress.</p>
+            </div>
+            <div class="box">
+                <img src="static/img3.jpg">
+                <h2 class="h-secondary center">
+                    Food Catering
+                </h2>
+                <p class="center">Elevate your events with MyMeal's professional catering services! Our expert team will work with you to create a customized menu that fits your occasion, whether it's a wedding, corporate event, or private party. Delight your guests with flavorful dishes crafted to impress.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="static/logo1.jpg">
+            </div>
+            <div class="client-item">
+                <img src="static/logo1.jpg">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter your phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-type">Service Type: </label>
+                    <select name="service-type" id="service-type" onchange="toggleAddressField()" required>
+                        <option value="">Select a service</option>
+                        <option value="bulk-delivery">Bulk Delivery</option>
+                        <option value="food-catering">Food Catering</option>
+                    </select>
+                </div>
+                <div class="form-group" id="home-address-field" style="display:none;">
+                    <label for="home-address">Home Address: </label>
+                    <input type="text" name="home-address" id="home-address" placeholder="Enter your home address">
+                </div>
+                <div class="form-group" id="venue-address-field" style="display:none;">
+                    <label for="venue-address">Venue Address: </label>
+                    <input type="text" name="venue-address" id="venue-address" placeholder="Enter the venue address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Enter additional details"></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="btn2" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- <script>
+        function toggleAddressFields() {
+            const isBulk = document.getElementById('bulkDelivery').checked;
+            const isCatering = document.getElementById('catering').checked;
+    
+            // Show/hide address fields based on selection
+            document.getElementById('homeAddressField').style.display = isBulk ? 'block' : 'none';
+            document.getElementById('venueAddressField').style.display = isCatering ? 'block' : 'none';
+        }
+    
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                serviceType: document.querySelector('input[name="serviceType"]:checked').value,
+                address: document.getElementById('bulkDelivery').checked 
+                    ? document.getElementById('homeAddress').value 
+                    : document.getElementById('venueAddress').value,
+                message: document.getElementById('message').value
+            };
+    
+            console.log("Form Data Submitted:", formData);
+    
+            // You can add an AJAX request or fetch to send the form data to the server
+        });
+    </script>
+     -->
+    
+    <!-- New Customer Support Section -->
+    <section id="customer-support">
+        <h1 class="h-primary center">Customer Support</h1>
+        <div id="support-box" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="support-details" style="text-align: left;">
+                <p>📞 Toll-Free: 1-800-123-4567</p>
+                <p>📧 Email: support@mymeal.com</p>
+                <p>💬 Chat with us!</p> <!-- Add your chat support or other details here -->
+                <p>🌐 Visit our FAQ section for more help.</p> <!-- Add any additional information if needed -->
+            </div>
+            <div class="social-icons" style="text-align: right;">
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+     
+
+
+
+
+    <footer>
+        <div class="center">
+            Copyright &copy; MyMeal.com All Rights Reserved.
+        </div>
+    </footer>
+    
+    <script>
+        function toggleAddressField() {
+            var serviceType = document.getElementById('service-type').value;
+            var homeAddressField = document.getElementById('home-address-field');
+            var venueAddressField = document.getElementById('venue-address-field');
+            
+            if (serviceType === 'bulk-delivery') {
+                homeAddressField.style.display = 'block';
+                venueAddressField.style.display = 'none';
+            } else if (serviceType === 'food-catering') {
+                venueAddressField.style.display = 'block';
+                homeAddressField.style.display = 'none';
+            } else {
+                homeAddressField.style.display = 'none';
+                venueAddressField.style.display = 'none';
+            }
+        }
+    </script>
+    <!-- JavaScript for handling the "Order Now" button click -->
+    <script>
+        function placeOrder() {
+            fetch('/place-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: 'Order Now clicked!' })
+            }).then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+    
+</body>
+
+</html>

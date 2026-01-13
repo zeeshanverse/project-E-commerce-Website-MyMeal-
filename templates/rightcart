@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | MyMeal.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        body {
+            font-family: 'Bree Serif', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            font-family: 'Baloo Bhai 2', cursive;
+            font-size: 3rem;
+            color: #14635e; /* Dark teal */
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse; /* Ensures borders don't double up */
+            background-color: rgba(177, 213, 228, 0.474);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            color: #14635e; /* Dark teal */
+            background-color: rgba(177, 213, 228, 0.474);
+        }
+
+        tr:hover {
+            background-color: rgba(177, 213, 228, 0.474);
+        }
+
+        button {
+            padding: 8px 12px;
+            color: #14635e; /* Dark teal */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            color: #14635e; /* Dark teal */
+        }
+
+        .total-amount {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #14635e; /* Dark teal */
+        }
+
+        .checkout-button {
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .mid-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="mid-container">Your Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price (₹)</th>
+                <th>Quantity</th>
+                <th>Subtotal (₹)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %}
+            <tr>
+                <td>{{ item.item }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price * item.quantity }}</td>
+                <td>
+                    <form action="{{ url_for('remove_from_cart') }}" method="post" style="display: inline;">
+                        <input type="hidden" name="item" value="{{ item.item }}">
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Display total amount -->
+    <div class="total-amount">
+        <h3>Total Amount: ₹{{ total_amount }}</h3>
+    </div>
+
+    <div class="checkout-button">
+        <form action="{{ url_for('checkout') }}" method="get">
+            <button type="submit">Proceed to Checkout</button>
+        </form>
+    </div>
+</body>
+
+</html>
