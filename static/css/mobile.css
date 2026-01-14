@@ -1,42 +1,164 @@
-/* mobile--------> */
-    /*navbar*/
+/* ================================
+   GLOBAL MOBILE OPTIMIZATION
+================================ */
+* {
+    box-sizing: border-box;
+}
 
-    #navbar{
-        flex-direction:column;
-    }
-    
-    
-    
-    /*home*/
-    
-    #home{
-        height:200px;
-    }
-    #home::before{
-        height:370px;}
-        #home p{
-            font-size:8px;}
-    
-    /*services*/
-    
-    #services{
-        flex-direction:column;
-    
-    }
-    
-    
-    
-    /*client section*/
-    #clients{
-        overflow:hidden;
-    }
-    
-    
-    
-    
-    /*contact*/
-    
-    
-    
-    
-    /*foote*/
+body {
+    padding: 0 10px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+#navbar {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+}
+
+#navbar ul {
+    flex-direction: column;
+    gap: 10px;
+}
+
+#navbar ul li {
+    font-size: 1rem;
+}
+
+/* Logo size adjust */
+#logo img {
+    width: 60px;
+    height: 60px;
+}
+
+/* ================================
+   HOME SECTION
+================================ */
+#home {
+    padding: 20px;
+    height: auto;
+}
+
+#home h1 {
+    font-size: 1.8rem;
+}
+
+#home p {
+    font-size: 1rem;
+}
+
+#btn1 {
+    font-size: 1.1rem;
+    width: 70%;
+}
+
+/* ================================
+   SERVICES SECTION
+================================ */
+#services {
+    flex-direction: column;
+    width: 100%;
+}
+
+#services .box {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ================================
+   CLIENT SECTION
+================================ */
+#clients {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ================================
+   CONTACT FORM
+================================ */
+#contact-box form {
+    width: 100%;
+}
+
+#contact-box input,
+#contact-box textarea,
+#contact-box select {
+    font-size: 1rem;
+}
+
+/* ================================
+   CART PAGE (table → stacked)
+================================ */
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+    display: block;
+    width: 100%;
+}
+
+tr {
+    margin-bottom: 10px;
+    background: rgba(177,213,228,0.3);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+th {
+    display: none; /* hide headers */
+}
+
+td {
+    font-size: 1rem;
+}
+
+/* ================================
+   CHECKOUT PAGE
+================================ */
+form {
+    width: 100% !important;
+}
+
+.total-amount {
+    font-size: 1.2rem;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+/* ================================
+   ORDER PAGE MENU CARDS
+================================ */
+.space {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.space h3 {
+    font-size: 1.2rem;
+}
+
+/* ================================
+   THANK YOU PAGE
+================================ */
+h1, h2, h3 {
+    font-size: 1.5rem !important;
+}
+
