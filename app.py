@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session, flash
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = 'my_secret_key'  # Secret key for session
 
 # Sample menu items with 6 options
