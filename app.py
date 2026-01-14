@@ -165,4 +165,5 @@ def place_order():
     return redirect(url_for('thank_you'))  # Ensure 'thank_you' matches the route name for thankyou.html
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
+
