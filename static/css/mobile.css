@@ -46,33 +46,34 @@ h1, h2, h3, h4, p {
 }
 
 
-/* MOBILE MENU ICON */
+/* Mobile only */
 .mobile-menu-icon {
-    font-size: 28px;
-    color: white;
+    display: block;
+    font-size: 30px;
+    padding: 10px;
     cursor: pointer;
-    padding-right: 10px;
 }
 
-/* DROPDOWN MENU */
 .mobile-menu {
     display: none;
     flex-direction: column;
-    background: rgba(0,0,0,0.9);
+    gap: 10px;
+    background-color: #fff;
+    width: 100%;
     padding: 15px;
-    position: fixed;
+    position: absolute;
     top: 60px;
-    right: 10px;
-    border-radius: 10px;
-    z-index: 20;
+    left: 0;
+    border-bottom: 1px solid #ccc;
 }
 
 .mobile-menu a {
-    color: white;
+    text-decoration: none;
+    color: black;
     padding: 10px 0;
     font-size: 1.2rem;
-    text-align: right;
 }
+
 
 /* ------------------------ HERO SECTION ------------------------ */
 

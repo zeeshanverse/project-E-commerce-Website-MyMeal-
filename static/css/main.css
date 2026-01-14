@@ -214,3 +214,12 @@
         height:45px;
         line-height:40px;
     }
+
+    /* Desktop default */
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
