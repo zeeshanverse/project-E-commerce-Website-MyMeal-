@@ -426,6 +426,19 @@ select:focus {
 </style>
 
 <body>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+        &#9776;
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="/">Home</a>
+        <a href="#services-container">Services</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="/cart">Cart</a>
+        <a href="/checkout">Checkout</a>
+    </div>
+
     <div id="logo">
         <img src="static/cwh.jpg" alt="myonlinemeal.com">
     </div>
@@ -640,6 +653,13 @@ select:focus {
             });
         }
     </script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
+
     
 </body>
 

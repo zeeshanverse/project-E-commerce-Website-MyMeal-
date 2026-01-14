@@ -1,164 +1,166 @@
-/* ================================
-   GLOBAL MOBILE OPTIMIZATION
-================================ */
-* {
-    box-sizing: border-box;
-}
+/* MOBILE OPTIMIZATION FOR MAX-WIDTH 768px */
 
+/* GLOBAL FIXES */
 body {
-    padding: 0 10px;
+    padding: 0;
+    margin: 0;
     overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+h1, h2, h3, h4, p {
+    word-wrap: break-word;
 }
 
-/* ================================
-   NAVBAR
-================================ */
+/* ------------------------ NAVIGATION ------------------------ */
+
 #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 10px;
+    background: rgba(0,0,0,0.7); 
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+#logo img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+/* HIDE original menu */
+#navbar ul {
+    display: none;
+}
+
+/* MOBILE MENU ICON */
+.mobile-menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+/* DROPDOWN MENU */
+.mobile-menu {
+    display: none;
     flex-direction: column;
-    padding: 10px;
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    border-radius: 10px;
+    z-index: 20;
+}
+
+.mobile-menu a {
+    color: white;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+/* ------------------------ HERO SECTION ------------------------ */
+
+#home {
+    padding: 120px 20px 60px 20px;
     text-align: center;
 }
 
-#navbar ul {
-    flex-direction: column;
-    gap: 10px;
-}
-
-#navbar ul li {
-    font-size: 1rem;
-}
-
-/* Logo size adjust */
-#logo img {
-    width: 60px;
-    height: 60px;
-}
-
-/* ================================
-   HOME SECTION
-================================ */
-#home {
-    padding: 20px;
-    height: auto;
-}
-
 #home h1 {
-    font-size: 1.8rem;
+    font-size: 32px;
+    line-height: 38px;
 }
 
 #home p {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 #btn1 {
-    font-size: 1.1rem;
-    width: 70%;
+    font-size: 1rem;
+    padding: 10px 20px;
 }
 
-/* ================================
-   SERVICES SECTION
-================================ */
+/* ------------------------ SERVICES ------------------------ */
+
 #services {
     flex-direction: column;
-    width: 100%;
+    margin: 0;
+    padding: 0 10px;
 }
 
 #services .box {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* ================================
-   CLIENT SECTION
-================================ */
+#services .box img {
+    height: 80px;
+    width: 80px;
+}
+
+/* ------------------------ CLIENTS ------------------------ */
+
 #clients {
     flex-wrap: wrap;
-    gap: 10px;
 }
 
-/* ================================
-   CONTACT FORM
-================================ */
+#clients img {
+    height: 50px;
+    width: 50px;
+}
+
+/* ------------------------ CONTACT FORM ------------------------ */
+
+#contact-box {
+    width: 100%;
+    padding: 0 10px;
+}
+
 #contact-box form {
-    width: 100%;
-}
-
-#contact-box input,
-#contact-box textarea,
-#contact-box select {
-    font-size: 1rem;
-}
-
-/* ================================
-   CART PAGE (table → stacked)
-================================ */
-table,
-thead,
-tbody,
-th,
-td,
-tr {
-    display: block;
-    width: 100%;
-}
-
-tr {
-    margin-bottom: 10px;
-    background: rgba(177,213,228,0.3);
-    padding: 10px;
-    border-radius: 8px;
-}
-
-th {
-    display: none; /* hide headers */
-}
-
-td {
-    font-size: 1rem;
-}
-
-/* ================================
-   CHECKOUT PAGE
-================================ */
-form {
     width: 100% !important;
+}
+
+#contact-box label {
+    font-size: 1.2rem;
+}
+
+/* ------------------------ FOOTER ------------------------ */
+
+footer {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ------------------------ ORDER PAGE ------------------------ */
+.space {
+    width: 92%;
+    margin: 15px auto;
+    padding: 15px;
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+}
+
+/* ------------------------ CART & CHECKOUT ------------------------ */
+table {
+    width: 100% !important;
+}
+
+th, td {
+    font-size: 14px;
+    padding: 8px;
 }
 
 .total-amount {
     font-size: 1.2rem;
 }
-
-/* ================================
-   BUTTONS
-================================ */
-button {
-    width: 100%;
-    font-size: 1rem;
-    padding: 10px;
-}
-
-/* ================================
-   ORDER PAGE MENU CARDS
-================================ */
-.space {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 15px;
-}
-
-.space h3 {
-    font-size: 1.2rem;
-}
-
-/* ================================
-   THANK YOU PAGE
-================================ */
-h1, h2, h3 {
-    font-size: 1.5rem !important;
-}
-
