@@ -4,6 +4,12 @@
     }
     /*navigation bar*/
     
+    @media (max-width: 768px) {
+    #navbar ul {
+        display: none !important;
+    }
+}
+
     
     #navbar{
         display:flex;
