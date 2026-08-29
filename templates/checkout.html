@@ -54,6 +54,7 @@
           </div>
           <div class="field full">
             <label for="payment_method">Payment method</label>
+
             <select id="payment_method" name="payment_method" required>
               <option value="">Select a method</option>
               <option value="cod">Cash on Delivery</option>
@@ -62,26 +63,66 @@
             </select>
           </div>
 
-          <div class="field full payment-section" id="card-details" hidden>
+          <!-- Card Details -->
+          <div class="field full payment-section" id="card-details" style="display:none;">
             <label for="card_number">Card number</label>
-            <input id="card_number" name="card_number" inputmode="numeric" autocomplete="off" placeholder="Demo field — no real payment is processed">
+
+            <input
+              id="card_number"
+              name="card_number"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="1234 5678 9012 3456"
+            >
+
             <div class="form-grid" style="margin-top:12px;">
+
               <div class="field">
-                <label for="expiry_date">Expiry</label>
-                <input id="expiry_date" name="expiry_date" autocomplete="off" placeholder="MM/YY">
+                <label for="expiry_date">Expiry date</label>
+
+                <input
+                  id="expiry_date"
+                  name="expiry_date"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="MM/YY"
+                >
               </div>
+
               <div class="field">
                 <label for="cvv">CVV</label>
-                <input id="cvv" name="cvv" type="password" inputmode="numeric" autocomplete="off" placeholder="CVV">
+
+                <input
+                  id="cvv"
+                  name="cvv"
+                  type="password"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  placeholder="CVV"
+                >
               </div>
+
             </div>
           </div>
 
-          <div class="field full payment-section" id="wallet-details" hidden>
+          <!-- Wallet Details -->
+          <div
+            class="field full payment-section"
+            id="wallet-details"
+            style="display:none;"
+          >
             <label for="wallet_number">Wallet number</label>
-            <input id="wallet_number" name="wallet_number" autocomplete="off" placeholder="Demo wallet number">
+
+            <input
+              id="wallet_number"
+              name="wallet_number"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Enter wallet number"
+            >
           </div>
-        </div>
 
         <button class="btn btn-primary" style="margin-top:22px;width:100%;" type="submit">Place order · ₹{{ total_amount }}</button>
       </form>
@@ -113,23 +154,60 @@
 
 <script>
   const paymentMethod = document.getElementById("payment_method");
+
   const cardDetails = document.getElementById("card-details");
   const walletDetails = document.getElementById("wallet-details");
 
+  const cardNumber = document.getElementById("card_number");
+  const expiryDate = document.getElementById("expiry_date");
+  const cvv = document.getElementById("cvv");
+  const walletNumber = document.getElementById("wallet_number");
+
   function updatePaymentFields() {
-    const method = paymentMethod?.value;
-    if (!paymentMethod) return;
 
-    cardDetails.hidden = method !== "card";
-    walletDetails.hidden = method !== "wallet";
+    const method = paymentMethod.value;
 
-    document.getElementById("card_number").required = method === "card";
-    document.getElementById("expiry_date").required = method === "card";
-    document.getElementById("cvv").required = method === "card";
-    document.getElementById("wallet_number").required = method === "wallet";
+    // Hide everything first
+    cardDetails.style.display = "none";
+    walletDetails.style.display = "none";
+
+    // Remove required from everything
+    cardNumber.required = false;
+    expiryDate.required = false;
+    cvv.required = false;
+    walletNumber.required = false;
+
+    // Card selected
+    if (method === "card") {
+
+      cardDetails.style.display = "block";
+
+      cardNumber.required = true;
+      expiryDate.required = true;
+      cvv.required = true;
+    }
+
+    // Wallet selected
+    else if (method === "wallet") {
+
+      walletDetails.style.display = "block";
+
+      walletNumber.required = true;
+    }
+
+    // COD
+    else if (method === "cod") {
+
+      // Nothing extra required
+    }
   }
 
-  paymentMethod?.addEventListener("change", updatePaymentFields);
+  paymentMethod.addEventListener(
+    "change",
+    updatePaymentFields
+  );
+
+  // Set correct state when page loads
   updatePaymentFields();
 </script>
 </body>
