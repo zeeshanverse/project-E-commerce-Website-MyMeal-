@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — MyMeal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='cwh.jpg') }}" alt="MyMeal logo">
+      <span>MyMeal</span>
+    </a>
+    <div class="nav-links">
+      <a href="{{ url_for('order') }}">Menu</a>
+      <a class="nav-cart" href="{{ url_for('cart') }}">Cart</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="page">
+    <div class="page-title">
+      <h1>Let's talk.</h1>
+      <p>Send a delivery, catering or bulk-order request.</p>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {% if category == 'success' %}success{% endif %}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form class="panel" action="{{ url_for('contact') }}" method="post">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required placeholder="+91...">
+        </div>
+        <div class="field">
+          <label for="service-type">Request type</label>
+          <select id="service-type" name="service-type" required>
+            <option value="">Choose one</option>
+            <option value="bulk-delivery">Bulk delivery</option>
+            <option value="food-catering">Food catering</option>
+          </select>
+        </div>
+
+        <div class="field full" id="home-address-field" hidden>
+          <label for="home-address">Delivery address</label>
+          <textarea id="home-address" name="home-address" rows="3" placeholder="Delivery address"></textarea>
+        </div>
+
+        <div class="field full" id="venue-address-field" hidden>
+          <label for="venue-address">Venue address</label>
+          <textarea id="venue-address" name="venue-address" rows="3" placeholder="Catering venue"></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us what you need..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="margin-top:20px;" type="submit">Send request</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">© 2026 MyMeal</div>
+</footer>
+
+<script>
+  const type = document.getElementById("service-type");
+  const homeField = document.getElementById("home-address-field");
+  const venueField = document.getElementById("venue-address-field");
+  const homeAddress = document.getElementById("home-address");
+  const venueAddress = document.getElementById("venue-address");
+
+  function updateAddressFields() {
+    const value = type.value;
+    homeField.hidden = value !== "bulk-delivery";
+    venueField.hidden = value !== "food-catering";
+    homeAddress.required = value === "bulk-delivery";
+    venueAddress.required = value === "food-catering";
+  }
+
+  type.addEventListener("change", updateAddressFields);
+  updateAddressFields();
+</script>
+</body>
+</html>
